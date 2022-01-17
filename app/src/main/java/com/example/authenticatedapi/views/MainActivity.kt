@@ -2,6 +2,7 @@ package com.example.authenticatedapi.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.VISIBLE
 import androidx.lifecycle.ViewModelProvider
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.usersLiveDatas.observe(this,{characters->
             processResponse(characters)
+            Log.i("main", characters.toString())
 
 
         })

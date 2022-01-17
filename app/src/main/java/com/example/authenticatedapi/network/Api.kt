@@ -9,7 +9,11 @@ import retrofit2.http.Headers
 
 interface Api {
      //////////////////////////////method for getting the firstname and lastname//////////
-       //@Headers("Content-Type: application/json")
-        @GET("users/recent")
-        suspend fun getTopUsers(@Header("Authorization") Token:String): usersResponse
-          }
+//       @Headers("Content-Type: application/json")
+//        @GET("users/recent")
+//        suspend fun getTopUsers(@Header("Authorization") accessToken:String): usersResponse
+
+    @Headers("No-Authentication: true")
+    @GET("users/recent")
+    suspend fun getTopUsers(): usersResponse
+}
